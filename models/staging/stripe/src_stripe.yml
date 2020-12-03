@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: raw
+    tables:
+      - name: payment
+        loaded_at_field: _batched_at
+        freshness:
+          warn_after: {count: 300, period: hour}
+          error_after: {count: 300, period: hour}
+        description:  This is a table of payments.
+        columns:  
+          - name: id
+            description:  this is the payment id added as a column 15:49

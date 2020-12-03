@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: This is the description I added 16:42
+    database: raw
+    tables:
+      - name: customers
+        columns: 
+          - name:  id
+            description: Primary key for the customers
+            tests:
+              - unique
+              - not_null
+      - name: orders
+        columns:
+          - name: id
+            description:  Primary key for orders
+            tests:
+              - unique
+              - not_null
+            
